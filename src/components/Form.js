@@ -1,13 +1,6 @@
 import React from 'react';
-import * as yup from 'yup';
 
-const formSchema = yup.object().shape({
-    fullName: yup
-    .string()
-    .trim()
-    .required("Please enter your full name")
-    .min(2, "name must be at least 2 characters"),
-})
+
 
 
 const Form = (props) => {
@@ -34,12 +27,17 @@ const Form = (props) => {
         <div id="pizza-form">
             <h2>Build Your Own Pizza</h2>
             <form onSubmit={onSubmit}>
+                <div className="error-message">
+                    <div>{errors.fullName}</div>
+                    <div>{errors.size}</div>
+                </div>
                 <input 
                     id="name-input"
                     type="text"
                     name="fullName"
                     placeholder="Enter your full name"
                     onChange={onChange}
+                    value={values.fullName}
                 />
                 <label>Size matters
                     <select 
@@ -61,6 +59,7 @@ const Form = (props) => {
                             type="checkbox"
                             name="pepperoni"
                             onChange={onChange}
+                            value={values.pepperoni}
                         />
                     </label>
                     <label>Italian Sausage
@@ -68,6 +67,7 @@ const Form = (props) => {
                             type="checkbox"
                             name="sausage"
                             onChange={onChange}
+                            value={values.sausage}
                         />
                     </label>
                     <label>Bacon
@@ -75,6 +75,7 @@ const Form = (props) => {
                             type="checkbox"
                             name="bacon"
                             onChange={onChange}
+                            value={values.bacon}
                         />
                     </label>
                     <label>Mushrooms
@@ -82,6 +83,7 @@ const Form = (props) => {
                             type="checkbox"
                             name="mushrooms"
                             onChange={onChange}
+                            value={values.mushrooms}
                         />
                     </label>
                     <label>Onion
@@ -89,6 +91,7 @@ const Form = (props) => {
                             type="checkbox"
                             name="onion"
                             onChange={onChange}
+                            value={values.onion}
                         />
                     </label>
                     <label>Green Pepper
@@ -96,6 +99,7 @@ const Form = (props) => {
                             type="checkbox"
                             name="greenPepper"
                             onChange={onChange}
+                            value={values.greenPepper}
                         />
                     </label>
                     <label>Anchovies
@@ -103,6 +107,7 @@ const Form = (props) => {
                             type="checkbox"
                             name="anchovies"
                             onChange={onChange}
+                            value={values.anchovies}
                         />
                     </label>
                 </div>
@@ -112,6 +117,7 @@ const Form = (props) => {
                     name="special"
                     placeholder="Please add any additional instructions here"
                     onChange={onChange}
+                    value={values.special}
                 />
                 <button id="order-button">Add to Order</button>
             </form>
