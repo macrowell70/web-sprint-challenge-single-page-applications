@@ -2,22 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import * as yup from 'yup';
+import formSchema from './validation/formschema';
 
 import Form from './components/Form';
 import Confirmation from './components/Confirmation';
 import Home from './components/Home';
 
-
-const formSchema = yup.object().shape({
-  fullName: yup
-    .string()
-    .trim()
-    .required("Please enter your full name")
-    .min(2, "name must be at least 2 characters"),
-  size: yup
-    .string()
-    .oneOf(["small", "medium", "large", "x-large"], "please pick your size"),
-})
 
 
 const initialFormValues = {
@@ -105,7 +95,7 @@ const App = () => {
           />
         </Route>
         <Route path="/confirmation">
-          <Confirmation />
+          <Confirmation order={order}/>
         </Route>
         <Route path="/">
           <Home />
