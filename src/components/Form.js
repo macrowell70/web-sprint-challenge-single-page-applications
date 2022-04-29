@@ -46,11 +46,13 @@ const Form = (props) => {
                         id="size-dropdown" 
                         name="size"
                         onChange={onChange}
+                        value={values.size}
                     >
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
-                        <option value="x-large">The Hunger Destroyer!</option>
+                        <option value="" >--Choose Your Size--</option>
+                        <option value="small" >Small</option>
+                        <option value="medium" >Medium</option>
+                        <option value="large" >Large</option>
+                        <option value="x-large" >The Hunger Destroyer!</option>
                     </select>
                 </label>
                 <div className="checkbox-container">

@@ -28,7 +28,7 @@ const App = () => {
   const postNewOrder = newOrder => {
     axios.post("https://reqres.in/api/orders", newOrder)
       .then(res => {
-        console.log(res)
+        console.log(res.data)
       }).catch(err => console.error(err))
   }
 
@@ -65,9 +65,9 @@ const App = () => {
       <Switch>
         <Route path="/pizza">
           <Form 
-          values={formValues}
-          change={inputChange}
-          submit={orderSubmit}
+            values={formValues}
+            change={inputChange}
+            submit={orderSubmit}
 
           />
         </Route>
