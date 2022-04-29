@@ -9,7 +9,6 @@ const Form = (props) => {
         values,
         submit,
         change,
-        disabled,
         errors
     } = props
 
