@@ -59,6 +59,7 @@ h2 {
 body {
   background-color: #e7f3f9;
   font-family: sans-serif;
+  text-align: center;
 }
 
 header {
@@ -79,9 +80,66 @@ header a {
   color: #e7f3f9;
 }
 
+.App-container {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 30vh;
+}
+
+
+#pizza-form {
+  height: 100vh;
+}
+
+#pizza-form h2 {
+  margin: 20px 0;
+}
+
+.image-container {
+  height: 40vh;
+}
+
+img {
+  height: 40vh;
+  width: 100%;
+  object-fit: fill;
+}
+
+
+.pizza-form {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#size-dropdown {
+  margin-top: 10px;
+}
+
 .checkbox-container {
+  width: 300px;
   max-width: 100%;
+  height: 30vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+}
+
+#special-text {
+  width: 300px;
+  max-width: 100%;
 }

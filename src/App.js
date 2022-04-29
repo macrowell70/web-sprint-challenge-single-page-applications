@@ -76,32 +76,32 @@ const App = () => {
   },[])
 
   return (
-    <div>
+    <div className="App">
       <header>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/pizza">Place an order</Link>
-          <Link to="/confirmation">Your order</Link> 
-        </nav> 
-      </header>
-      
-      <Switch>
-        <Route path="/pizza">
-          <Form 
-            values={formValues}
-            change={inputChange}
-            submit={orderSubmit}
-            errors={formErrors}
-          />
-        </Route>
-        <Route path="/confirmation">
-          <Confirmation order={order}/>
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-      
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/pizza">Place an order</Link>
+            <Link to="/confirmation">Your order</Link> 
+          </nav> 
+      </header> 
+      <div cassName="App-container">
+        <Switch>
+          <Route path="/pizza">
+            <Form 
+              values={formValues}
+              change={inputChange}
+              submit={orderSubmit}
+              errors={formErrors}
+            />
+          </Route>
+          <Route path="/confirmation">
+            <Confirmation order={order}/>
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
     </div>
 
     

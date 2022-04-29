@@ -3,6 +3,7 @@ import React from 'react';
 
 
 
+
 const Form = (props) => {
     const {
         values,
@@ -26,7 +27,10 @@ const Form = (props) => {
     return (
         <div id="pizza-form">
             <h2>Build Your Own Pizza</h2>
-            <form onSubmit={onSubmit}>
+            <div className="image-container">
+                <img src="/assets/Pizza.jpg" alt="delicious looking pizza" />
+            </div>
+            <form onSubmit={onSubmit} className="pizza-form">
                 <div className="error-message">
                     <div>{errors.fullName}</div>
                     <div>{errors.size}</div>
@@ -39,7 +43,7 @@ const Form = (props) => {
                     onChange={onChange}
                     value={values.fullName}
                 />
-                <label>Size matters
+                <label>Size matters<br/>
                     <select 
                         id="size-dropdown" 
                         name="size"
