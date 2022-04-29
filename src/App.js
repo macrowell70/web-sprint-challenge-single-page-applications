@@ -8,19 +8,20 @@ const App = () => {
     <div>
       <header>
         <nav>
-          <Link id="home" to="/">Home</Link>
-          <Link id="order-pizza" to="/order">Place an order</Link>
-          <Link id="order-confirmation" to="/confirmation">Your order</Link> 
+          <Link to="/">Home</Link>
+          <Link to="/pizza">Place an order</Link>
+          <Link to="/confirmation">Your order</Link> 
         </nav> 
       </header>
       <h1>Bloomtech Eats!</h1>
       <p>Satisfy your hunger!</p>
+      <Link id="order-pizza" to="/pizza"><button>Get Started!</button></Link>
       
       <Switch>
-        <Route path={"/order"}>
+        <Route exact path="/pizza">
           <Form />
         </Route>
-        <Route path={"/confirmation"}>
+        <Route exact path="/confirmation">
           <Confirmation />
         </Route>
       </Switch>
