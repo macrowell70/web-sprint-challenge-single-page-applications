@@ -1,4 +1,13 @@
 import React from 'react';
+import * as yup from 'yup';
+
+const formSchema = yup.object().shape({
+    fullName: yup
+    .string()
+    .trim()
+    .required("Please enter your full name")
+    .min(2, "name must be at least 2 characters"),
+})
 
 
 const Form = () => {
@@ -10,10 +19,10 @@ const Form = () => {
             <h2>Build Your Own Pizza</h2>
             <form>
                 <input 
-                id="name-input"
-                type="text"
-                name="fullName"
-                placeholder="Enter your full name"
+                    id="name-input"
+                    type="text"
+                    name="fullName"
+                    placeholder="Enter your full name"
                 />
                 <label>Pick your size
                     <select id="size-dropdown">
@@ -46,9 +55,13 @@ const Form = () => {
                         <input type="checkbox"/>
                     </label>
                 </div>
-                
-
-
+                <input
+                    id="special-text" 
+                    type="text"
+                    name="special"
+                    placeholder="Please add any additional instructions here"
+                />
+                <button id="order-button">Add to Order</button>
             </form>
         </div>
     )
