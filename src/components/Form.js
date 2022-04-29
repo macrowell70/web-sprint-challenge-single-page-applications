@@ -15,6 +15,12 @@ const Form = () => {
                 name="fullName"
                 placeholder="Full Name"
                 />
+                <select id="size-dropdown">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="x-large">The Hunger Destroyer!</option>
+                </select>
             </form>
         </div>
     )
