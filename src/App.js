@@ -1,7 +1,10 @@
 import React from "react";
-import { Link, Route, Switch } from 'react-router-dom'
+import { Link, Route, Switch } from 'react-router-dom';
+
+
 import Form from './components/Form';
 import Confirmation from './components/Confirmation';
+import Home from './components/Home';
 
 const App = () => {
   return (
@@ -13,16 +16,16 @@ const App = () => {
           <Link to="/confirmation">Your order</Link> 
         </nav> 
       </header>
-      <h1>Bloomtech Eats!</h1>
-      <p>Satisfy your hunger!</p>
-      <Link id="order-pizza" to="/pizza"><button>Get Started!</button></Link>
       
       <Switch>
-        <Route exact path="/pizza">
+        <Route path="/pizza">
           <Form />
         </Route>
-        <Route exact path="/confirmation">
+        <Route path="/confirmation">
           <Confirmation />
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
       
